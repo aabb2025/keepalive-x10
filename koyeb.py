@@ -11,10 +11,10 @@ List = []
 
 def login(usr, pwd):
     session = requests.Session()
-    login_url = 'https://app.koyeb.com/v1/account/login'
+    login_url = 'https://x10hosting.com/login'
     headers = {
-    	'origin': 'https://app.koyeb.com',
-        'referer': 'https://app.koyeb.com/auth/signin',
+    	'origin': 'https://x10hosting.com',
+        'referer': 'https://x10hosting.com/auth/signin',
         'content-type': 'application/json',
         'user-agent': 'Mozilla/5.0 (Linux; Android 10; PBEM00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.52 Mobile Safari/537.36'
     }
@@ -26,10 +26,10 @@ def login(usr, pwd):
     if res.status_code == 200:
         status = res.json()
         token = status.get('token').get('id')
-        check_url = 'https://app.koyeb.com/v1/account/profile'
+        check_url = 'https://x10hosting.com/v1/account/profile'
         check_head = {
             'authorization': f'Bearer {token}',
-            'referer': 'https://app.koyeb.com/auth/signin',
+            'referer': 'https://x10hosting.com/auth/signin',
             'user-agent': 'Mozilla/5.0 (Linux; Android 10; PBEM00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.52 Mobile Safari/537.36'
 
         }
